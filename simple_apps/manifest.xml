@@ -13,7 +13,7 @@
   <depend package="geometry_msgs"/>
   <depend package="nav_msgs"/>
   <depend package="std_msgs"/>
-  <depend package="elektron_base"/>
+  <depend package="rys_base"/>
 
 </package>
 

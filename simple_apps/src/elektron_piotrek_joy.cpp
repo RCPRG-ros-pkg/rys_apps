@@ -1,6 +1,7 @@
 #include <ros/ros.h>
 #include <joy/Joy.h>
 #include <geometry_msgs/Twist.h>
+#include <ros/console.h>
 
 class ElektronTeleopJoy {
 public:
@@ -36,11 +37,13 @@ void ElektronTeleopJoy::joyCallback(const joy::Joy::ConstPtr& joy) {
 	vel.angular.z = a_scale_ * joy->axes[angular_];
 	vel.linear.x = l_scale_ * joy->axes[linear_];
 	vel_pub_.publish(vel);
+
+	ROS_DEBUG("joy: %d %d\n", (int)vel.angular.z, (int)vel.linear.x);
 }
 
 int main(int argc, char** argv) {
 	ros::init(argc, argv, "piotrek_teleop_node");
 	ElektronTeleopJoy elektron_teleop;
-
+        ROS_DEBUG("elektron_piotrek_joy.cpp: main()\n");
 	ros::spin();
 }

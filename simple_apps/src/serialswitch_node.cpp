@@ -1,4 +1,5 @@
 #include <ros/ros.h>
+#include <ros/console.h>
 #include <std_msgs/Int16.h>
 
 #include "serialswitch.hpp"
@@ -12,7 +13,6 @@ int main(int argc, char** argv){
     ros::init(argc, argv, "serialswitch_node");
     ros::NodeHandle n;
     ros::NodeHandle nh("~");
-    
   //  bool dump;
     ros::Publisher serialswitch_pub = n.advertise<std_msgs::Int16>("state",1);
     
@@ -29,7 +29,6 @@ int main(int argc, char** argv){
     
   //  p = new SerialSwitch(dev);
  	sp = new SerialSwitch();
-    
 	    
 	while(ros::ok()){
 	  //  ros::Time current_time = ros::Time::now();
