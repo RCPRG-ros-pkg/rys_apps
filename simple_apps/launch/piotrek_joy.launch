@@ -1,23 +1,44 @@
 <launch>
 
-	<!-- Joy node -->
-	<node respawn="true" pkg="joy" type="joy" name="joy" >
-		<param name="dev" type="string" value="/dev/input/js0" />
-	</node>
+        <!-- Joy node -->
+        <node respawn="true" pkg="joy" type="joy" name="joy" >
+                <param name="dev" type="string" value="/dev/input/js0" />
+        </node>
 
-	<!-- Axes and scaling -->
-	<param name="axis_linear" value="1" type="int"/>
-	<param name="axis_angular" value="3" type="int"/>
-	<param name="scale_linear" value="0.20" type="double"/>
-	<param name="scale_angular" value="0.8" type="double"/>
-	<param name="button_turbo" value="7" type="int"/>
-	<param name="button_stop" value="6" type="int"/>
-	<param name="button_feature1" value="1" type="int"/>
-	<param name="button_feature2" value="2" type="int"/>
-	
-	<!-- At last - teleoperation node -->
-	<node pkg="simple_apps" type="elektron_piotrek_joy" name="telepiotrek"/>
-	<node pkg="simple_apps" type="serialswitch_node" name="serialsw" output="screen" />
-	<node pkg="rys_base" type="rys_base_node" name="rysbase" output="screen" />
-	
+        <param name="~/device" value="/dev/ttyUSB0"/>
+        <!-- Axes and scaling -->
+        <param name="axis_linear" value="1" type="int"/>
+        <param name="axis_angular" value="2" type="int"/>
+        <param name="scale_linear" value="1.0" type="double"/>
+        <param name="scale_angular" value="1.0" type="double"/>
+        <param name="button_turbo" value="7" type="int"/>
+        <param name="button_stop" value="6" type="int"/>
+        <param name="button_feature1" value="1" type="int"/>
+        <param name="button_feature2" value="2" type="int"/>
+
+        <param name="~/parL_currentKp" value="0" type="int"/>
+        <param name="~/parL_currentKi" value="2" type="int"/>
+        <param name="~/parL_currentKd" value="0" type="int"/>
+        <param name="~/parL_maxCurrent" value="80" type="int"/>
+        <param name="~/parL_speedKp" value="8" type="int"/>
+        <param name="~/parL_speedKi" value="0" type="int"/>
+        <param name="~/parL_speedKd" value="0" type="int"/>
+
+        <param name="~/parR_currentKp" value="0" type="int"/>
+        <param name="~/parR_currentKi" value="2" type="int"/>
+        <param name="~/parR_currentKd" value="0" type="int"/>
+        <param name="~/parR_maxCurrent" value="80" type="int"/>
+        <param name="~/parR_speedKp" value="8" type="int"/>
+        <param name="~/parR_speedKi" value="0" type="int"/>
+        <param name="~/parR_speedKd" value="0" type="int"/>
+
+        <param name="~/use_speed_regulator" value="1" type="int"/>
+
+        <param name="~/balance_angle" value="89.5" type="double"/>
+        
+        <!-- At last - teleoperation node -->
+        <node pkg="simple_apps" type="elektron_piotrek_joy" name="telepiotrek"/>
+        <node pkg="simple_apps" type="serialswitch_node" name="serialsw" output="screen" />
+        <node pkg="rys_base" type="rys_base_node" name="rysbase" output="screen" />
+
 </launch>
