@@ -36,6 +36,18 @@
 
         <param name="~/balance_angle" value="89.5" type="double"/>
         
+        <param name="~/angleKp" value="0.02" type="double"/>
+        <param name="~/angleKi" value="0.001" type="double"/>
+        <param name="~/angleKd" value="0.0" type="double"/>
+        
+        <param name="~/avKp" value="1.5" type="double"/>
+        <param name="~/avKi" value="0.5" type="double"/>
+        <param name="~/avKd" value="0.0" type="double"/>
+
+        <param name="~/lvKp" value="5.0" type="double"/>
+        <param name="~/lvKi" value="2.8" type="double"/>
+        <param name="~/lvKd" value="0.0" type="double"/>
+
         <!-- At last - teleoperation node -->
         <node pkg="simple_apps" type="elektron_piotrek_joy" name="telepiotrek"/>
         <node pkg="simple_apps" type="serialswitch_node" name="serialsw" output="screen" />
