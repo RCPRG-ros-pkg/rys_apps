@@ -6,6 +6,8 @@
         </node>
 
         <param name="~/device" value="/dev/ttyUSB0"/>
+        <param name="~/device2" value="/dev/ttyUSB1"/>
+        
         <!-- Axes and scaling -->
         <param name="axis_linear" value="1" type="int"/>
         <param name="axis_angular" value="2" type="int"/>
@@ -19,7 +21,7 @@
         <param name="~/parL_currentKp" value="0" type="int"/>
         <param name="~/parL_currentKi" value="2" type="int"/>
         <param name="~/parL_currentKd" value="0" type="int"/>
-        <param name="~/parL_maxCurrent" value="80" type="int"/>
+        <param name="~/parL_maxCurrent" value="120" type="int"/>
         <param name="~/parL_speedKp" value="8" type="int"/>
         <param name="~/parL_speedKi" value="0" type="int"/>
         <param name="~/parL_speedKd" value="0" type="int"/>
@@ -27,26 +29,26 @@
         <param name="~/parR_currentKp" value="0" type="int"/>
         <param name="~/parR_currentKi" value="2" type="int"/>
         <param name="~/parR_currentKd" value="0" type="int"/>
-        <param name="~/parR_maxCurrent" value="80" type="int"/>
+        <param name="~/parR_maxCurrent" value="120" type="int"/>
         <param name="~/parR_speedKp" value="8" type="int"/>
         <param name="~/parR_speedKi" value="0" type="int"/>
         <param name="~/parR_speedKd" value="0" type="int"/>
 
         <param name="~/use_speed_regulator" value="1" type="int"/>
 
-        <param name="~/balance_angle" value="89.5" type="double"/>
+        <param name="~/balance_angle" value="6.0" type="double"/>
         
-        <param name="~/angleKp" value="0.02" type="double"/>
-        <param name="~/angleKi" value="0.001" type="double"/>
+        <param name="~/angleKp" value="0.015" type="double"/>
+        <param name="~/angleKi" value="0.00020" type="double"/>
         <param name="~/angleKd" value="0.0" type="double"/>
         
-        <param name="~/avKp" value="1.5" type="double"/>
-        <param name="~/avKi" value="0.5" type="double"/>
+        <param name="~/avKp" value="2.2" type="double"/>
+        <param name="~/avKi" value="1.0" type="double"/>
         <param name="~/avKd" value="0.0" type="double"/>
 
-        <param name="~/lvKp" value="5.0" type="double"/>
-        <param name="~/lvKi" value="2.8" type="double"/>
-        <param name="~/lvKd" value="0.0" type="double"/>
+        <param name="~/lvKp" value="90.0" type="double"/>
+        <param name="~/lvKi" value="0.30" type="double"/>
+        <param name="~/lvKd" value="225.0" type="double"/>
 
         <!-- At last - teleoperation node -->
         <node pkg="simple_apps" type="elektron_piotrek_joy" name="telepiotrek"/>
